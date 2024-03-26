@@ -1,13 +1,13 @@
 package com.ms.hotel.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ms.hotel.entity.Hotel;
-import com.ms.hotel.exception.ResourceNotFoundException;
 import com.ms.hotel.repo.HotelRepo;
 import com.ms.hotel.service.HotelService;
 
@@ -31,9 +31,9 @@ public class HotelServiceImpl implements HotelService{
 	public Hotel getById(String hotelId) {
 		// TODO Auto-generated method stub
 		
-		Hotel hotel = this.hotelRepo.findById(hotelId)
-				.orElseThrow(() -> new ResourceNotFoundException("Hotel Details not found with Id " + hotelId));
-		return hotel;
+		Optional<Hotel> hotel = this.hotelRepo.findById(hotelId);
+				//.orElseThrow(() -> new ResourceNotFoundException("Hotel Details not found with Id " + hotelId));
+		return hotel.get();
 	}
 
 	@Override

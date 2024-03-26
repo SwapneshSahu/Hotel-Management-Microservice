@@ -13,7 +13,7 @@ import com.ms.User.Service.Service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+//@Slf4j
 @Service
 public class UserServiceImpl implements UserService{
 

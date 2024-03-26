@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/users")
-@Slf4j
+//@Slf4j
 public class UserController {
 
 	@Autowired
@@ -40,7 +40,7 @@ public class UserController {
 //	    @Retry(name = "ratingHotelService", fallbackMethod = "ratingHotelFallback")
 //	@RateLimiter(name = "userRateLimiter", fallbackMethod = "ratingHotelFallback")
 	public ResponseEntity<User> getSingleUser(@PathVariable String userId) {
-		log.info("Get Single User Handler: UserController");
+	//	log.info("Get Single User Handler: UserController");
 //	        logger.info("Retry count: {}", retryCount);
 
 		User user = userService.getUser(userId);
